@@ -1,2 +1,2 @@
 # ARANA
-Web Crawler built using Python and BeautifulSoup and a UI
+Web Crawler built using Django Framework, Python and BeautifulSoup
