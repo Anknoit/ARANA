@@ -28,9 +28,14 @@ def news(request):
     }
     response = requests.get(url_news, params=parameters)
     response_json = response.json()
-    web_view ={
-        'articles': response_json['articles']
-    }
+    news_title =[]
+    for i in response_json['articles']:
+        news_title.append(i['title'])
+
+    web_view = {
+        'title': news_title,
+    }    
+
     # print(response_json)
     for i in response_json['articles']:
         print(i['title'])
