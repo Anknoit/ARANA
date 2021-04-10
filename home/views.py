@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from bs4 import BeautifulSoup
+from newsapi import NewsApiClient
 import requests
 
 # Create your views here.
@@ -18,7 +19,23 @@ def index(request):
         }
         return render(request, 'index.html', var_html) #passing variable dictionary to render to use variable in html if user enters the URL
     return render(request, 'index.html')  #no URL passed no var_html assigned hence return index page
-
+def news(request):
+    url_news = 'https://newsapi.org/v2/everything?'
+    parameters = {
+        'q': 'nifty', # query phrase
+        'pageSize': 20,  # maximum is 100
+        'apiKey': '501256ccfe394b328764551fda043006' # your own API key
+    }
+    response = requests.get(url_news, params=parameters)
+    response_json = response.json()
+    web_view ={
+        'articles': response_json['articles']
+    }
+    # print(response_json)
+    for i in response_json['articles']:
+        print(i['title'])
+    return render(request, 'news.html', web_view)
+# news()
 
 '''
 REMEMBER
