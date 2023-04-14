@@ -1,0 +1,1 @@
+web: gunicorn ARANA.wsgi --log-file -
