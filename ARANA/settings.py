@@ -25,7 +25,7 @@ SECRET_KEY = 'nq#m+#655u&v(6@ickn3t@1*j2x7g72umq72)ledk=x2(0osb7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://main.d1hzog7k3f74he.amplifyapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
